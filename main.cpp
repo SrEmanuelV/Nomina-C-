@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip> // Para std::setprecision
 #include <string>
 using namespace std;
 
@@ -78,6 +79,7 @@ int main() {
         double netoPagado = calcularNetoPagado(totalDevengado, salud, pension, retencionFuente, otrasDeducciones);
 
         // Mostrar resultados
+        cout << fixed << setprecision(2); // Configurar el formato para los decimales
         cout << "\n--- Resultados ---" << endl;
         cout << "Nombre del empleado: " << nombre << endl;
         cout << "Salario Devengado: " << salarioDevengado << " COP" << endl;
@@ -94,4 +96,5 @@ int main() {
     cout << "Programa terminado." << endl;
     return 0;
 }
+
 
