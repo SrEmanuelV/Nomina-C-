@@ -7,13 +7,13 @@ using namespace std;
 const double SALARIO_MINIMO = 2600000.0;  // Salario minimo para calcular auxilio de transporte
 
 // Funcion para calcular el salario devengado
-double calcularSalarioDevengado(double salarioBase, double horasExtras, double recargosNocturnos, double trabajoDominicalFestivo, double auxilioTransporte) {
-    return salarioBase + horasExtras + recargosNocturnos + trabajoDominicalFestivo + auxilioTransporte;
+double calcularSalarioDevengado(double salarioBase,  double diasLiquidados) {
+    return (salarioBase / 30) * diasLiquidados;
 }
 
 // Funcion para calcular el total devengado
-double calcularTotalDevengado(double salarioDevengado) {
-    return salarioDevengado; // En este caso, el total devengado es igual al salario devengado
+double calcularTotalDevengado(double salarioDevengado, double horasExtras, double recargosNocturnos, double trabajoDominicalFestivo, double auxilioTransporte) {
+    return salarioDevengado + horasExtras + recargosNocturnos + trabajoDominicalFestivo + auxilioTransporte; // En este caso, el total devengado es igual al salario devengado
 }
 
 // Funcion para calcular el neto pagado
@@ -61,8 +61,8 @@ int main() {
             cin >> auxilioTransporte;
         }
 
-        double salarioDevengado = calcularSalarioDevengado(salarioBase, horasExtras, recargosNocturnos, trabajoDominicalFestivo, auxilioTransporte);
-        double totalDevengado = calcularTotalDevengado(salarioDevengado);
+        double salarioDevengado = calcularSalarioDevengado(salarioBase, diasLiquidados);
+        double totalDevengado = calcularTotalDevengado(salarioDevengado, horasExtras, recargosNocturnos, trabajoDominicalFestivo, auxilioTransporte);
 
         cout << "Ingrese el valor de la salud: ";
         cin >> salud;
@@ -96,5 +96,3 @@ int main() {
     cout << "Programa terminado." << endl;
     return 0;
 }
-
-
