@@ -3,19 +3,19 @@
 using namespace std;
 
 // Definir las constantes
-const double SALARIO_MINIMO = 2600000.0;  // Salario mínimo para calcular auxilio de transporte
+const double SALARIO_MINIMO = 2600000.0;  // Salario minimo para calcular auxilio de transporte
 
-// Función para calcular el salario devengado
+// Funcion para calcular el salario devengado
 double calcularSalarioDevengado(double salarioBase, double horasExtras, double recargosNocturnos, double trabajoDominicalFestivo, double auxilioTransporte) {
     return salarioBase + horasExtras + recargosNocturnos + trabajoDominicalFestivo + auxilioTransporte;
 }
 
-// Función para calcular el total devengado
+// Funcion para calcular el total devengado
 double calcularTotalDevengado(double salarioDevengado) {
     return salarioDevengado; // En este caso, el total devengado es igual al salario devengado
 }
 
-// Función para calcular el neto pagado
+// Funcion para calcular el neto pagado
 double calcularNetoPagado(double totalDevengado, double salud, double pension, double retencionFuente, double otrasDeducciones) {
     return totalDevengado - (salud + pension + retencionFuente + otrasDeducciones);
 }
@@ -34,7 +34,7 @@ int main() {
         cout << "Ingrese el salario base: ";
         cin >> salarioBase;
 
-        cout << "Ingrese los días liquidados: ";
+        cout << "Ingrese los dias liquidados: ";
         cin >> diasLiquidados;
 
         cout << "Ingrese las horas extras trabajadas: ";
@@ -53,7 +53,7 @@ int main() {
         cin >> trabajoDominicalFestivo;
 
         if (salarioBase > SALARIO_MINIMO) {
-            // No se requiere el auxilio de transporte si el salario es mayor al mínimo
+            // No se requiere el auxilio de transporte si el salario es mayor al minimo
             auxilioTransporte = 0;
         } else {
             cout << "Ingrese el auxilio de transporte: ";
@@ -66,10 +66,10 @@ int main() {
         cout << "Ingrese el valor de la salud: ";
         cin >> salud;
 
-        cout << "Ingrese el valor de la pensión: ";
+        cout << "Ingrese el valor de la pension: ";
         cin >> pension;
 
-        cout << "Ingrese la retención en la fuente: ";
+        cout << "Ingrese la retencion en la fuente: ";
         cin >> retencionFuente;
 
         cout << "Ingrese otras deducciones: ";
@@ -85,7 +85,7 @@ int main() {
         cout << "Neto Pagado: " << netoPagado << " COP" << endl;
 
         // Preguntar si se desea ingresar otro empleado
-        cout << "\n¿Desea ingresar otro empleado? (s/n): ";
+        cout << "\nDesea ingresar otro empleado? (s/n): ";
         cin >> opcion;
         cin.ignore(); // Limpiar el buffer de entrada
 
@@ -94,3 +94,4 @@ int main() {
     cout << "Programa terminado." << endl;
     return 0;
 }
+
